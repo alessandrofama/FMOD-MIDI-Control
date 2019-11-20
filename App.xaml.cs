@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 
 namespace FMOD_MIDI_Control
 {
@@ -13,9 +7,9 @@ namespace FMOD_MIDI_Control
     /// </summary>
     public partial class App : Application
     {
-
         private void Application_Startup(object sender, StartupEventArgs e)
         {
+        
             // Create the startup window
             MainWindow wnd = new MainWindow();
             // Do stuff here, e.g. to the window
@@ -23,6 +17,7 @@ namespace FMOD_MIDI_Control
             // Show the window
             wnd.Show();
         }
+
 
     }
 }
