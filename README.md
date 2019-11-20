@@ -19,3 +19,6 @@ with their corresponding MIDI CC value. Enter the CC values manually or by using
 click on save.
 
 <img src=https://i.imgur.com/bu9BMaZ.png></img>
+
+
+TO DO: The resample feature will create empty profiler sessions. You need to remove these manually for now.
