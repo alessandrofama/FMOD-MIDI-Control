@@ -95,6 +95,12 @@ namespace FMOD_MIDI_Control
 
             var eventName = (string)GetScriptOutput("event.name");
 
+            if (eventName == null)
+            {
+                System.Windows.MessageBox.Show("Couldn't get the FMOD Event. Please select a valid FMOD Event in the Event Hierarchy", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                return;
+            }
+
             Event evt = new Event();
 
             evt.EventName = eventName;
@@ -263,7 +269,15 @@ namespace FMOD_MIDI_Control
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)
         {
-            GetMixerBusses();
+            if (IsConnectedToStudio())
+            {
+                GetMixerBusses();
+            }
+            else
+            {              
+                    System.Windows.MessageBox.Show("Can't connect to FMOD Studio, make sure a FMOD project is currently open.", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                    return;
+            }
         }
 
         private void DeviceList_DropDownClosed(object sender, EventArgs e)
@@ -346,7 +360,15 @@ namespace FMOD_MIDI_Control
 
         private void btnEventRefresh_Click(object sender, RoutedEventArgs e)
         {
+            if (IsConnectedToStudio())
+            {            
             GetEvent();
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("Can't connect to FMOD Studio, make sure a FMOD project is currently open.", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                return;
+            }
         }
 
         private void CC_Parameter_TextChanged(object sender, TextChangedEventArgs e)
