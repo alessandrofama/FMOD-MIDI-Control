@@ -1,5 +1,7 @@
 # FMOD-MIDI-Control
 
+<img src=https://i.imgur.com/1YP35BZ.gif></img>
+
 Control FMOD's Mixer and Event Parameters by using any MIDI Device. "Record" a playing Event into a new Event. 
 
 <b>Usage:</b>
